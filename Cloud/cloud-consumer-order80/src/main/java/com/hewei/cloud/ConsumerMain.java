@@ -16,8 +16,7 @@ public class ConsumerMain {
 
         SpringApplication.run(ConsumerMain.class,args);
 
-        System.out.println("客户端口启动成功");
-
+        System.out.println("~ 客户端口启动成功 ~");
 
     }
 }

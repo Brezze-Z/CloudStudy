@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /*
 *主要启动类
-*@Author： zhou
+*@Author： Herbert
 *@Data: 2022年8月12日09:27:44
 * */
 @SpringBootApplication
@@ -15,8 +15,10 @@ public class PaymentMain {
     public static void main(String[] args) {
 
         SpringApplication.run(PaymentMain.class,args);
-        System.out.println("启动成功！！");
+
+        System.out.println("~ 服务器启动成功 ~");
 
     }
+
 
 }

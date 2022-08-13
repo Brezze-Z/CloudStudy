@@ -3,7 +3,6 @@ package com.hewei.cloud.service.impl;
 import com.hewei.cloud.dao.PaymentDao;
 import com.hewei.cloud.entity.Payment;
 import com.hewei.cloud.service.PaymentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

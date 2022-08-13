@@ -41,8 +41,7 @@ public class PaymentController {
             e.printStackTrace();
         }
 
-        log.info("****** 当前的插入结果 " + result);
-
+        log.info("****** 当前的新增结果 ：" + result);
         return commonResult;
 
     }
@@ -50,7 +49,7 @@ public class PaymentController {
     @RequestMapping(value = "/payment/select/{id}",method = RequestMethod.GET)
     public CommonResult getSelectTest(@PathVariable(value = "id") Long id){
 
-        Payment result = paymentService.selById(id);
+        Payment result = (Payment) paymentService.selById(id);
 
         log.info("****** 当前的插入结果 "+ result);
 
