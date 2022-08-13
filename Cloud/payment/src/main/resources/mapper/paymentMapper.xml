@@ -10,7 +10,7 @@
     </resultMap>
 
     <!--增加-->
-    <insert id="insetPayment" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insetPayment" useGeneratedKeys="true">
         insert into payment(serial) values(#{serial});
     </insert>
 
@@ -18,6 +18,9 @@
     <select id="selById" resultType="com.hewei.cloud.entity.Payment">
          select * from payment where payment.id = #{id};
     </select>
+
+
+
 
 
 </mapper>
