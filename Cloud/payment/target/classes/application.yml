@@ -18,3 +18,11 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.hewei.cloud.entity #Entity 实体类所在的包
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+

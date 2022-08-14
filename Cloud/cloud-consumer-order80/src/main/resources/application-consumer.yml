@@ -11,8 +11,11 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/flowerstory?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
-
+    dbcp2:
+      validation-query: SELECT 1
+#Entity 实体类所在的包
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.hewei.cloud.entity #Entity 实体类所在的包
+  type-aliases-package: com.hewei.cloud.entity 
+
 

@@ -25,13 +25,13 @@ public class ConsumerController {
     private static final String Payment_Url = "http://localhost:8001";
 
     @Resource
-    private RestTemplate restTemplate;
+    private RestTemplate restTemplate = new RestTemplate();
 
-    // 由于是客户端，大部分请求都是Get。 新增请求
+    // 由于是客户端，大部分请求都是Get。 创建请求。
     @RequestMapping(value = "/consumer/payment/create",method = RequestMethod.GET)
     public CommonResult<Payment> create(Payment payment){
         // 通过restTemplate 来发送请求。
-        return restTemplate.postForObject(Payment_Url+"/payment/creat",payment,CommonResult.class);
+            return restTemplate.postForObject(Payment_Url+"/payment/creat",payment,CommonResult.class);
 
     }
 
@@ -39,7 +39,7 @@ public class ConsumerController {
     @RequestMapping(value = "/consumer/payment/select/{id}",method = RequestMethod.GET)
     public ResponseEntity<CommonResult> selectPayment(@PathVariable(value = "id") long id){
 
-        return restTemplate.getForEntity(Payment_Url+"/payment/select/"+id,CommonResult.class);
+         return restTemplate.getForEntity(Payment_Url+"/payment/select/"+id,CommonResult.class);
 
     }
 
