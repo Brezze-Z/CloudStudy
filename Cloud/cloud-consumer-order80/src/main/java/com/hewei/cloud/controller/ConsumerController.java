@@ -22,7 +22,10 @@ import javax.annotation.Resource;
 public class ConsumerController {
 
     // 创建基础的URL路径
-    private static final String Payment_Url = "http://localhost:8001";
+    //private static final String Payment_Url = "http://localhost:8001";
+
+    // 基础的URL路径交给Eureka进行负载均衡管理。
+    private static final String Payment_Url = "http://CLOUD-PAYMENT-SERVICE";
 
     @Resource
     private RestTemplate restTemplate = new RestTemplate();

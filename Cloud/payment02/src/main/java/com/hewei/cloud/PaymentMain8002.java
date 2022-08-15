@@ -11,12 +11,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 * */
 @SpringBootApplication
 @EnableEurekaClient
-public class  PaymentMain {
+public class PaymentMain8002 {
 
     // 主要启动类需要填写Main方法才可以进行正常的运行。
     public static void main(String[] args) {
 
-        SpringApplication.run(PaymentMain.class,args);
+        SpringApplication.run(PaymentMain8002.class,args);
 
         System.out.println("~ 服务器启动成功 ~");
 

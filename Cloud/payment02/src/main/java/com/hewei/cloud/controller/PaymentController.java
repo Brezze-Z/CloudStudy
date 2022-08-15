@@ -3,6 +3,7 @@ package com.hewei.cloud.controller;
 import com.hewei.cloud.common.CommonResult;
 import com.hewei.cloud.entity.Payment;
 import com.hewei.cloud.service.impl.PaymentServiceImpl;
+import com.netflix.discovery.DiscoveryClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +15,8 @@ public class PaymentController {
 
     @Autowired
     private PaymentServiceImpl paymentService;
+
+    private DiscoveryClient discoveryClient;
 
     @Value(value = "${server.port}")
     private String Port;
@@ -45,7 +48,7 @@ public class PaymentController {
             e.printStackTrace();
         }
 
-        log.info("****** 当前的新增结果 ：" + result+":"+Port);
+        log.info("****** 当前的新增结果 ：" + result +":" + Port);
         return commonResult;
 
     }
@@ -63,10 +66,9 @@ public class PaymentController {
 
         }else {
 
-            return new CommonResult(404,"查询数据失败" + ":" + Port, null);
+            return new CommonResult(404,"查询数据失败",result);
 
         }
-
 
     }
 

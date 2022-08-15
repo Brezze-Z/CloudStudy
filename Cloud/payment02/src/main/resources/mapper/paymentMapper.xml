@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hewei.cloud.dao.PaymentDao">
+
+    <resultMap type="Payment" id="PaymentMap">
+
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="serial" column="serial" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <!--增加-->
+    <insert id="insetPayment" useGeneratedKeys="true">
+        insert into payment(serial) values(#{serial});
+    </insert>
+
+
+    <select id="selById" resultType="Payment">
+         select * from payment where payment.id = #{id};
+    </select>
+
+
+
+
+
+</mapper>
