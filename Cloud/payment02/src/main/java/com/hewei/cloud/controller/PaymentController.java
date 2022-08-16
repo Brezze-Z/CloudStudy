@@ -16,6 +16,7 @@ public class PaymentController {
     @Autowired
     private PaymentServiceImpl paymentService;
 
+    // Eureka 服务发现，可以显示服务网址的相关信息，端口，路径，信息。
     private DiscoveryClient discoveryClient;
 
     @Value(value = "${server.port}")
