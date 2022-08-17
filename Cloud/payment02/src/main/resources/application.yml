@@ -13,7 +13,6 @@ spring:
     dbcp2:
       validation-query: SELECT 1
 
-
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.hewei.cloud.entity #Entity 实体类所在的包

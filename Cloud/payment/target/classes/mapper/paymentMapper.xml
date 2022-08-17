@@ -9,13 +9,19 @@
 
     </resultMap>
 
+    <resultMap id="testMap" type="com.hewei.cloud.entity.Payment">
+        <result property="serial" column="serial" jdbcType="VARCHAR"></result>
+
+    </resultMap>
+
+
     <!--增加-->
     <insert id="insetPayment" useGeneratedKeys="true">
         insert into payment(serial) values(#{serial});
     </insert>
 
 
-    <select id="selById" resultType="Payment">
+    <select id="selById" resultMap="PaymentMap">
          select * from payment where payment.id = #{id};
     </select>
 
