@@ -15,6 +15,7 @@
     <module>cloud-eureka-server7002</module>
     <module>payment02</module>
       <module>consul-payment-server</module>
+      <module>cloud-consumer-feign-server82</module>
   </modules>
   <packaging>pom</packaging>
 
