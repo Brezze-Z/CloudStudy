@@ -31,6 +31,15 @@ public class FeignController {
         return paymentService.getCreatePayResult(payment);
     }
 
+    /*
+    * Consumer端：Feigen端口访问
+    * 延时访问策略
+    * */
+    @GetMapping(value = "/consumer/stop")
+    public CommonResult getCommonResult(){
 
+        return paymentService.getThreeSec();
+
+    }
 
 }

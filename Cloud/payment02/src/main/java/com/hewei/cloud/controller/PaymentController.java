@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.TimeUnit;
+
 @RestController
 @Slf4j
 public class PaymentController {
@@ -23,7 +25,7 @@ public class PaymentController {
     private String Port;
 
     @RequestMapping(value = "/payment/creat",method = RequestMethod.POST)
-    public CommonResult getCreatTest(@RequestBody Payment payment) throws Exception{
+    public CommonResult getCreatTest(@RequestBody Payment payment){
 
 
         CommonResult commonResult = null;
@@ -72,5 +74,15 @@ public class PaymentController {
         }
 
     }
+
+    @GetMapping(value = "/payment/stop")
+    public CommonResult getSleepThreeSec() throws InterruptedException {
+
+        // 延迟三秒钟
+        TimeUnit.SECONDS.sleep(3);
+
+        return new CommonResult(200, Port,null);
+    }
+
 
 }

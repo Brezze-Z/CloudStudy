@@ -3,10 +3,13 @@ package com.hewei.cloud.controller;
 import com.hewei.cloud.common.CommonResult;
 import com.hewei.cloud.entity.Payment;
 import com.hewei.cloud.service.impl.PaymentServiceImpl;
+import com.mysql.fabric.Server;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
@@ -69,5 +72,18 @@ public class PaymentController {
 
 
     }
+
+    /*
+    *
+    * 模拟请求超时: openFeign做测试
+    * */
+    @GetMapping(value = "/payment/stop")
+    public CommonResult getSleepThreeSec() throws InterruptedException {
+
+        // 延迟三秒钟
+        TimeUnit.SECONDS.sleep(3);
+        return new CommonResult(200, Port,null);
+    }
+
 
 }

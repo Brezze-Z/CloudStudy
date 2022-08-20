@@ -22,4 +22,4 @@ ribbon:
 logging:
   level:
     # feign日志以 debug 级别监控 com.atguigu.springcloud.service.PaymentFeignService 接口
-    com.atguigu.springcloud.service.PaymentFeignService: debug
+    com.hewei.cloud.config.FeignConfig: debug

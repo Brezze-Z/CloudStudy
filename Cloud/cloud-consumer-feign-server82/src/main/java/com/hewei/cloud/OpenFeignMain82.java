@@ -13,5 +13,4 @@ public class OpenFeignMain82 {
         SpringApplication.run(OpenFeignMain82.class,args);
 
     }
-
 }
