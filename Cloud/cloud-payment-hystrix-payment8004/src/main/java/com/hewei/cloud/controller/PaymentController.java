@@ -3,6 +3,8 @@ package com.hewei.cloud.controller;
 import com.hewei.cloud.common.CommonResult;
 import com.hewei.cloud.entity.Payment;
 import com.hewei.cloud.service.impl.PaymentServiceImpl;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,12 +29,13 @@ public class PaymentController {
 
     }
 
-    // 请求的错误（超时）方法
+    // 请求的错误（超时）方法 3s
     @GetMapping("/hystrix/indexerr/{id}")
     public String runTestAboutHystrixErr(@PathVariable(name = "id")Integer id){
 
-        log.info(paymentService.getPaymentInfo_Err(id));
-        return paymentService.getPaymentInfo_Err(id);
+        String result = paymentService.getPaymentInfo_Err(id);
+        log.info(result);
+        return result;
 
     }
 
