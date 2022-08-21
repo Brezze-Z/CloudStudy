@@ -19,6 +19,7 @@ public class EurekaMain7002 {
     public static void main(String[] args) {
 
         SpringApplication.run(EurekaMain7002.class,args);
+        System.out.println("Eureka:7002"+"✿✿ヽ(°▽°)ノ✿");
 
     }
 

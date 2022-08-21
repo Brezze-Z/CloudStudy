@@ -16,6 +16,9 @@
     <module>payment02</module>
       <module>consul-payment-server</module>
       <module>cloud-consumer-feign-server82</module>
+      <module>cloud-payment-hystrix-payment8004</module>
+      <module>cloud-consumer-hystrix85</module>
+    <module>cloud-consumer-hystrix-consumer85</module>
   </modules>
   <packaging>pom</packaging>
 
